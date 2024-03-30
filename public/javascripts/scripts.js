@@ -1,4 +1,6 @@
 const menuItem = document.querySelectorAll('.menu-item');
+const profileInfo = document.querySelector('#profile');
+const profileCard = document.querySelector('.profile-card');
 const messagesNotification = document.querySelector('#messages-notifications');
 const messages = document.querySelector('.messages');
 const message = document.querySelectorAll('.message');
@@ -69,11 +71,22 @@ const closeThemeModal = (e) => {
         themeModal.style.display = 'none';
     }
 }
+const closeProfileModal = (e) => {
+    if (e.target.classList.contains('profile-card')) {
+        profileCard.style.display = 'none';
+    }
+}
+
+const openProfileModal = () => {
+    profileCard.style.display = 'grid';
+}
 
 themeModal.addEventListener('click', closeThemeModal);
+profileCard.addEventListener('click', closeProfileModal);
 
 
 theme.addEventListener('click', openThemeModal);
+profileInfo.addEventListener('click', openProfileModal);
 
 
 // font size

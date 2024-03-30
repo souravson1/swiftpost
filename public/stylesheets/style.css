@@ -475,7 +475,6 @@ main .container .left .profile {
   left: 0;
   z-index: 100;
   text-align: center;
-  display: grid;
   place-items: center;
   font-size: 0.9rem;
   display: none;
@@ -484,11 +483,26 @@ main .container .left .profile {
   background: var(--color-white);
   padding: 3rem;
   border-radius: var(--card-border-radius);
-  width: 30%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: start;
   box-shadow: 0 0 1rem var(--color-primary);
+}
+.profile-card .card .follow {
+  display: flex;
+  gap: 1rem;
 }
 .profile-card .card .user-info {
   display: flex;
+  column-gap: 1rem;
+  align-items: center;
+}
+.profile-card .card .user-info .handle {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
 .customize-theme {
   background: rgba(255, 255, 255, 0.5);

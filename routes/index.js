@@ -13,7 +13,8 @@ passport.use(new localStrategy(userModel.authenticate()))
 /* GET home page. */
 router.get('/', isLoggedIn, async function (req, res, next) {
   const user = await userModel.findOne({ username: req.session.passport.user });
-  res.render('index', { footer: true, user: user });
+  const posts = await postModel.find().populate('user');
+  res.render('index', { footer: true, user: user, posts: posts });
 
 });
 router.get('/register', function (req, res, next) {
